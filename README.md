@@ -20,14 +20,6 @@ EcoShop is a modern, responsive e-commerce web application built with React, Typ
 
 ## Tech Stack
 
-- **Frontend:** React, TypeScript, Tailwind CSS, ShadCN
-- **State Management:** React Context API
-- **Routing:** React Router
-- **API:** Axios (fetches products from a REST API)
-- **Icons:** Lucide React
-
-## Tech Stack
-
 - **Frontend:** React, TypeScript, Tailwind CSS
 - **State Management:** React Context API
 - **Routing:** React Router
