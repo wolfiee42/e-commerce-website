@@ -14,7 +14,7 @@ export const products: Product[] = [
     id: "1",
     title: "Wireless Bluetooth Headphones",
     price: 79.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Wireless-Bluetooth-Headphones.webp",
     description:
       "Premium wireless headphones with noise cancellation technology. Enjoy crystal-clear audio quality with up to 30 hours of battery life. Perfect for music lovers and professionals.",
     category: "Electronics",
@@ -25,7 +25,7 @@ export const products: Product[] = [
     id: "2",
     title: "Smart Fitness Watch",
     price: 199.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Smart-Fitness-Watch.png",
     description:
       "Advanced fitness tracking watch with heart rate monitoring, GPS, and smartphone connectivity. Track your workouts, monitor your health, and stay connected on the go.",
     category: "Wearables",
@@ -36,7 +36,7 @@ export const products: Product[] = [
     id: "3",
     title: "Organic Cotton T-Shirt",
     price: 29.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Organic-Cotton-T-Shirt.webp",
     description:
       "Comfortable and sustainable organic cotton t-shirt. Made from 100% organic materials with a soft, breathable fabric that's perfect for everyday wear.",
     category: "Clothing",
@@ -47,7 +47,7 @@ export const products: Product[] = [
     id: "4",
     title: "Stainless Steel Water Bottle",
     price: 24.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Stainless-Steel-Water-Bottle.jpg",
     description:
       "Durable stainless steel water bottle that keeps drinks cold for 24 hours or hot for 12 hours. BPA-free with a leak-proof design, perfect for outdoor activities.",
     category: "Lifestyle",
@@ -58,7 +58,7 @@ export const products: Product[] = [
     id: "5",
     title: "Wireless Phone Charger",
     price: 39.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Wireless-Phone-Charger.webp",
     description:
       "Fast wireless charging pad compatible with all Qi-enabled devices. Sleek design with LED indicator and overcharge protection for safe, convenient charging.",
     category: "Electronics",
@@ -69,7 +69,7 @@ export const products: Product[] = [
     id: "6",
     title: "Eco-Friendly Notebook Set",
     price: 18.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Eco-Friendly-Notebook-Set.png",
     description:
       "Set of 3 notebooks made from recycled paper with hardcover binding. Perfect for journaling, note-taking, or sketching. Includes dotted, lined, and blank pages.",
     category: "Stationery",
@@ -80,7 +80,7 @@ export const products: Product[] = [
     id: "7",
     title: "Portable Bluetooth Speaker",
     price: 59.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Portable-Bluetooth-Speaker.webp",
     description:
       "Compact wireless speaker with powerful sound and deep bass. Waterproof design with 12-hour battery life, perfect for outdoor adventures and parties.",
     category: "Electronics",
@@ -91,7 +91,7 @@ export const products: Product[] = [
     id: "8",
     title: "Minimalist Desk Lamp",
     price: 45.99,
-    image: "/placeholder.svg?height=300&width=300",
+    image: "./Minimalist-Desk-Lamp.webp",
     description:
       "Modern LED desk lamp with adjustable brightness and color temperature. Touch controls and USB charging port make it perfect for any workspace.",
     category: "Home & Office",
