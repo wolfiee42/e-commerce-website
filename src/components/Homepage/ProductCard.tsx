@@ -4,12 +4,17 @@ import { Badge } from "@/components/ui/badge";
 import type { Product } from "@/lib/products";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardFooter } from "../ui/card";
+import { useCart } from "@/context/cartContext";
 
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
+  const { handleAddToCart } = useCart();
+
+  console.log(handleAddToCart);
+
   return (
     <Link to={`/product/${product.id}`}>
       <Card className="w-full max-w-[200px] mx-auto hover:shadow-lg transition-shadow duration-200 cursor-pointer group">
@@ -50,9 +55,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
         <CardFooter className="pt-0 flex flex-col items-center">
           <Button
-            // onClick={handleAddToCart}
+            onClick={(e) => {
+              e.stopPropagation();
+              e.preventDefault();
+              handleAddToCart(product.id);
+            }}
             size="sm"
-            className="w-full min-w-[160px] flex items-center rounded-[6px]"
+            className="w-full min-w-[160px] flex items-center rounded-[6px] hover:cursor-pointer"
           >
             <ShoppingCart className="h-3 w-3" />
             <span className="text-xs">Add to Cart</span>

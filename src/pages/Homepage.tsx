@@ -3,6 +3,7 @@ import { CartProvider } from "@/context/cartContext";
 import type { FC } from "react";
 import "../App.css";
 import { Outlet } from "react-router-dom";
+import CartSidebar from "@/components/Homepage/CartSidebar";
 const Homepage: FC = () => {
   return (
     <CartProvider>
@@ -11,6 +12,7 @@ const Homepage: FC = () => {
         <div className="max-w-7xl mx-auto w-full ">
           <Outlet />
         </div>
+        <CartSidebar />
       </div>
     </CartProvider>
   );

@@ -13,16 +13,14 @@ import { Separator } from "@/components/ui/separator";
 import type { Product } from "@/lib/products";
 import { Link, useParams } from "react-router-dom";
 import { products } from "@/lib/products";
+import { useCart } from "@/context/cartContext";
 
 interface ProductDetailProps {
   product: Product | undefined;
 }
 
 const ProductDetail = ({ product }: ProductDetailProps) => {
-  const handleAddToCart = () => {
-    // addItem(product);
-    // openCart();
-  };
+  const { handleAddToCart } = useCart();
 
   if (product === undefined) {
     return;
@@ -81,7 +79,7 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
           <div className="space-y-4">
             <Button
-              onClick={handleAddToCart}
+              onClick={() => handleAddToCart(product.id)}
               size="lg"
               className="w-full flex items-center space-x-2"
             >
