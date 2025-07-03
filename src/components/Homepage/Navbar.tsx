@@ -22,7 +22,7 @@ const Navbar: FC = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 hover:cursor-pointer"
             >
               <Home className="h-4 w-4" />
               <span className="hidden sm:inline">Home</span>

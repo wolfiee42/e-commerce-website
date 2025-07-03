@@ -47,7 +47,7 @@ const CheckoutModal = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4 ">
       <div className="bg-background rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
         {isSuccess ? (
           <div className="p-6 text-center">
@@ -68,6 +68,7 @@ const CheckoutModal = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setShowCheckout(false)}
+                className="hover:cursor-pointer"
               >
                 <X className="h-4 w-4" />
               </Button>
@@ -123,7 +124,7 @@ const CheckoutModal = () => {
 
                 <Button
                   type="submit"
-                  className="w-full"
+                  className="w-full hover:cursor-pointer"
                   size="lg"
                   disabled={isSubmitting}
                 >

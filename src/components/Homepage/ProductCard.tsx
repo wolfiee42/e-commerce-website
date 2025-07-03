@@ -14,7 +14,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const { handleAddToCart } = useCart();
 
   return (
-    <Link to={`/product/${product.id}`}>
+    <Link to={`/product/${product._id}`}>
       <Card className="w-full max-w-[200px] mx-auto hover:shadow-lg transition-shadow duration-200 cursor-pointer group">
         <CardContent>
           <div className="aspect-square relative mb-3 overflow-hidden rounded-[4px]">
@@ -56,7 +56,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
             onClick={(e) => {
               e.stopPropagation();
               e.preventDefault();
-              handleAddToCart(product.id);
+              handleAddToCart(product._id as string);
             }}
             size="sm"
             className="w-full min-w-[160px] flex items-center rounded-[6px] hover:cursor-pointer"

@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Suspense } from "react";
 import Loading from "@/components/loading/Loading";
-import ProductDetailWrapper from "./components/Homepage/ProductDetails";
 import ProductGrid from "./components/Homepage/ProductGrid";
 import Homepage from "./pages/Homepage";
+import ProductDetail from "./components/Homepage/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         path: "product/:id",
         element: (
           <Suspense fallback={<Loading isLoading={true} />}>
-            <ProductDetailWrapper />
+            <ProductDetail />
           </Suspense>
         ),
       },

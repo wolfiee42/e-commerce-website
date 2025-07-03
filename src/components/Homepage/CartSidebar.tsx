@@ -17,8 +17,6 @@ const CartSidebar: FC = () => {
     setShowCheckout,
   } = useCart();
 
-  console.log(showCheckout);
-
   if (state.isOpen) {
     return (
       <>
@@ -32,7 +30,12 @@ const CartSidebar: FC = () => {
                 <h2 className="text-lg font-semibold">Shopping Cart</h2>
                 <Badge variant="secondary">{state.items.length}</Badge>
               </div>
-              <Button variant="ghost" size="sm" onClick={closeCart}>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={closeCart}
+                className="hover:cursor-pointer"
+              >
                 <X className="h-4 w-4" />
               </Button>
             </div>
@@ -67,7 +70,7 @@ const CartSidebar: FC = () => {
                           {item.product.title}
                         </h3>
                         <p className="text-sm text-muted-foreground">
-                          ${item.product.price.toFixed(2)}
+                          ${item?.product?.price.toFixed(2)}
                         </p>
                       </div>
 
@@ -78,9 +81,9 @@ const CartSidebar: FC = () => {
                               variant="outline"
                               size="sm"
                               onClick={() =>
-                                updateQuantity(item.product.id, -1)
+                                updateQuantity(item.product._id as string, -1)
                               }
-                              className="h-6 w-6 p-0"
+                              className="h-6 w-6 p-0 hover:cursor-pointer"
                             >
                               <Minus className="h-3 w-3" />
                             </Button>
@@ -91,8 +94,10 @@ const CartSidebar: FC = () => {
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => updateQuantity(item.product.id, 1)}
-                            className="h-6 w-6 p-0"
+                            onClick={() =>
+                              updateQuantity(item.product._id as string, 1)
+                            }
+                            className="h-6 w-6 p-0 hover:cursor-pointer"
                           >
                             <Plus className="h-3 w-3" />
                           </Button>
@@ -100,8 +105,8 @@ const CartSidebar: FC = () => {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => removeItem(item.product.id)}
-                          className="text-destructive hover:text-destructive h-6 text-xs"
+                          onClick={() => removeItem(item.product._id as string)}
+                          className="text-destructive hover:text-destructive h-6 text-xs hover:cursor-pointer"
                         >
                           Remove
                         </Button>
@@ -119,11 +124,11 @@ const CartSidebar: FC = () => {
                 <div className="flex items-center justify-between">
                   <span className="text-lg font-semibold">Total:</span>
                   <span className="text-lg font-bold text-primary">
-                    ${getTotalPrice().toFixed(2)}
+                    ${getTotalPrice()?.toFixed(2)}
                   </span>
                 </div>
                 <Button
-                  className="w-full"
+                  className="w-full hover:cursor-pointer"
                   size="lg"
                   onClick={() => setShowCheckout(true)}
                 >

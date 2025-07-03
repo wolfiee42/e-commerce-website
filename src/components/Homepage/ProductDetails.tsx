@@ -12,19 +12,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import type { Product } from "@/lib/products";
 import { Link, useParams } from "react-router-dom";
-import { products } from "@/lib/products";
 import { useCart } from "@/context/cartContext";
+import { useEffect, useState } from "react";
 
-interface ProductDetailProps {
-  product: Product | undefined;
-}
+const ProductDetail = () => {
+  const { handleAddToCart, getSingleProduct } = useCart();
+  const [product, setProduct] = useState<Product>();
+  const params = useParams();
 
-const ProductDetail = ({ product }: ProductDetailProps) => {
-  const { handleAddToCart } = useCart();
+  useEffect(() => {
+    const fetchProduct = async () => {
+      if (!params.id) return;
+      const res = await getSingleProduct(params.id);
+      setProduct(res);
+    };
+    fetchProduct();
+  }, [getSingleProduct, params.id]);
 
   if (product === undefined) {
     return;
   }
+
   return (
     <div className="container mx-auto px-4 py-8">
       <Link
@@ -79,9 +87,9 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
 
           <div className="space-y-4">
             <Button
-              onClick={() => handleAddToCart(product.id)}
+              onClick={() => handleAddToCart(product._id as string)}
               size="lg"
-              className="w-full flex items-center space-x-2"
+              className="w-full flex items-center space-x-2 hover:cursor-pointer"
             >
               <ShoppingCart className="h-4 w-4" />
               <span>Add to Cart</span>
@@ -119,18 +127,4 @@ const ProductDetail = ({ product }: ProductDetailProps) => {
   );
 };
 
-const ProductDetailWrapper = () => {
-  const params = useParams();
-
-  const productDetails: Product | undefined = products.find(
-    (product) => product.id === params.id
-  );
-
-  if (productDetails === undefined) {
-    console.error("Product not found for ID:", params.id);
-  }
-
-  return <ProductDetail product={productDetails} />;
-};
-
-export default ProductDetailWrapper;
+export default ProductDetail;
