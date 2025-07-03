@@ -1,14 +1,24 @@
 import { Minus, Plus, ShoppingBag, X } from "lucide-react";
-import { type FC } from "react";
-// import { Badge } from "../ui/badge";
+import type { FC } from "react";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
 import { useCart } from "@/context/cartContext";
 import { Badge } from "../ui/badge";
+import CheckoutModal from "./Checkout";
 
 const CartSidebar: FC = () => {
-  const { state, closeCart, updateQuantity, removeItem, getTotalPrice } =
-    useCart();
+  const {
+    state,
+    closeCart,
+    updateQuantity,
+    removeItem,
+    getTotalPrice,
+    showCheckout,
+    setShowCheckout,
+  } = useCart();
+
+  console.log(showCheckout);
+
   if (state.isOpen) {
     return (
       <>
@@ -123,11 +133,7 @@ const CartSidebar: FC = () => {
             )}
           </div>
         </div>
-
-        {/* <CheckoutModal
-        isOpen={showCheckout}
-        onClose={() => setShowCheckout(false)}
-      /> */}
+        {showCheckout && <CheckoutModal />}
       </>
     );
   }

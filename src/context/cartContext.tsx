@@ -22,9 +22,12 @@ interface CartContextType {
   handleAddToCart: (productId: string) => void;
   closeCart: () => void;
   openCart: () => void;
-  updateQuantity: () => void;
-  removeItem: () => void;
+  updateQuantity: (productID: string, quantity: number) => void;
+  removeItem: (productID: string) => void;
+  removeAll: () => void;
   getTotalPrice: () => number;
+  showCheckout: boolean;
+  setShowCheckout: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -34,6 +37,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     items: [],
     isOpen: false,
   });
+
+  const [showCheckout, setShowCheckout] = useState(false);
 
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
@@ -116,6 +121,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
     });
   };
 
+  const removeAll = () => {
+    setState((prev) => {
+      const newItems: CartItem[] = [];
+      localStorage.removeItem("cart");
+      return { ...prev, items: newItems };
+    });
+  };
+
   const getTotalPrice = () => {
     return state.items.reduce(
       (total, item) => total + item.product.price * item.quantity,
@@ -131,6 +144,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
     updateQuantity,
     removeItem,
     getTotalPrice,
+    showCheckout,
+    setShowCheckout,
+    removeAll,
   };
 
   return (

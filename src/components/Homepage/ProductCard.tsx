@@ -13,8 +13,6 @@ interface ProductCardProps {
 const ProductCard = ({ product }: ProductCardProps) => {
   const { handleAddToCart } = useCart();
 
-  console.log(handleAddToCart);
-
   return (
     <Link to={`/product/${product.id}`}>
       <Card className="w-full max-w-[200px] mx-auto hover:shadow-lg transition-shadow duration-200 cursor-pointer group">
