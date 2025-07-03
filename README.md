@@ -26,35 +26,6 @@ EcoShop is a modern, responsive e-commerce web application built with React, Typ
 - **API:** Axios (fetches products from a REST API)
 - **Icons:** Lucide React
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or newer recommended)
-- pnpm or yarn
-
-### Installation
-
-1. **Clone the repository:**
-
-   ```sh
-   git clone # EcoShop – E-commerce React Website
-   ```
-
-EcoShop is a modern, responsive e-commerce web application built with React, TypeScript, and Tailwind CSS. It features a clean UI, product browsing, cart management, and a smooth checkout experience.
-
-## Features
-
-- **Product Listing:** Browse a curated collection of products fetched from a backend API.
-- **Product Details:** View detailed information about each product.
-- **Add to Cart:** Add products to your cart from the product grid or details page.
-- **Cart Sidebar:** View and manage your cart with a smooth sliding sidebar.
-- **Quantity Management:** Increase, decrease, or remove items from your cart.
-- **Persistent Cart:** Cart contents are saved in localStorage.
-- **Checkout Modal:** Begin the checkout process from the cart sidebar.
-- **Responsive Design:** Works great on desktop and mobile devices.
-- **Error Handling:** Robust error handling for API and cart actions.
-
 ## Tech Stack
 
 - **Frontend:** React, TypeScript, Tailwind CSS
@@ -68,7 +39,7 @@ EcoShop is a modern, responsive e-commerce web application built with React, Typ
 ### Prerequisites
 
 - Node.js (v18 or newer recommended)
-- npm or yarn
+- pnpm or yarn
 
 ### Installation
 
@@ -82,7 +53,7 @@ EcoShop is a modern, responsive e-commerce web application built with React, Typ
 2. **Install dependencies:**
 
    ```sh
-   Pnpm install
+   pnpm install
    # or
    yarn install
    ```
