@@ -1,10 +1,14 @@
+import Navbar from "@/components/Homepage/Navbar";
+import { CartProvider } from "@/context/cartContext";
 import type { FC } from "react";
-
+import "../App.css";
 const Homepage: FC = () => {
   return (
-    <div>
-      <h1>Welcome to the Homepage</h1>
-    </div>
+    <CartProvider>
+      <div className="min-h-screen bg-background">
+        <Navbar />
+      </div>
+    </CartProvider>
   );
 };
 
